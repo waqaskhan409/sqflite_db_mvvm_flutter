@@ -9,6 +9,7 @@ class ConsumerHome extends StatefulWidget {
 }
 
 class _ConsumerHomeState extends State<ConsumerHome> {
+
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeViewModel>(

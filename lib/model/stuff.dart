@@ -1,3 +1,6 @@
+
+
+// This is stuff instance or entity if you familiar with room database.
 class Stuff{
 
   int id;

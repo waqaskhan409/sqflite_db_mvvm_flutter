@@ -1,4 +1,6 @@
 
+
+//This is just constants class where our constants lying
 class Constants{
 
   /*This is Database configuration*/

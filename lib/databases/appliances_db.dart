@@ -11,6 +11,7 @@ class AppliancesDb{
     openDb();
   }
 
+  //This is function is just return the Database instance/object, inorder to maintain the changes in local database. Also, in this table we manage the foreign key constraint to reference the stuff table
   Future<Database> openDb() async {
     var databasesPath = await getDatabasesPath();
     String path = databasesPath + Constants.DB_NAME;
@@ -33,6 +34,9 @@ class AppliancesDb{
     return database;
   }
 
+  /*
+  This method is for pushing the value to the appliance table.
+   */
   void onAdd(Appliances appliances, Database database) async {
 
     int isSimple = appliances.is_simple ? 1 : 0;
@@ -49,6 +53,8 @@ class AppliancesDb{
   }
 
 
+
+  // THis function is for retrieving data from Appliance because appliance table is dependent to stuff thats why we can retrieve all the from stuff table and appliance table via INNER JOINS
   Future<List<Map>> onRetrieve(Database database) async {
     List<Map> list = await database.rawQuery('SELECT * FROM ${Constants.TABLE_NAME_APPLIANCE}'
         ' INNER JOIN ${Constants.TABLE_NAME_STUFF}'
